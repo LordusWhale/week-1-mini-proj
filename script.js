@@ -37,4 +37,20 @@ allGridElements.forEach(item=>{
 });
 
 
+/* 
+    Get quote on leaving view
+*/
+
+const quoteObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if (!entry.isIntersecting){
+            getQuote();
+        }
+    })
+}, {
+    threshold: 1
+})
+const quoteElement = document.querySelector('#quote');
+quoteObserver.observe(quoteElement);
+
 getQuote();
