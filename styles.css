@@ -115,6 +115,7 @@ a:hover {
     border-bottom: 1px solid var(--secondary);
     background-color: var(--primary);
     transition: all 1s;
+    opacity: 0;
 }
 .grid-item:hover{
     transform: scale(1.1);
@@ -124,6 +125,10 @@ a:hover {
 
 .last-container {
     grid-column: span 2;
+}
+.grid-in-view {
+    opacity: 100;
+    transition: all 1s;
 }
 
 .contact-form {

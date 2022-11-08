@@ -20,4 +20,21 @@ const formObserver = new IntersectionObserver(entries=>{
 const formInput = document.querySelector("form");
 formObserver.observe(formInput);
 
+/* 
+    Fade in animation for About page
+*/
+
+const aboutPageObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        entry.target.classList.toggle("grid-in-view", entry.isIntersecting);
+    });
+}, {
+    threshold: 0.5,
+})
+const allGridElements = document.querySelectorAll('.grid-item');
+allGridElements.forEach(item=>{
+    aboutPageObserver.observe(item);
+});
+
+
 getQuote();
