@@ -155,6 +155,7 @@ form {
     color: white;
     border-radius: 5%;
     transition: all 1s;
+    opacity: 0;
     
 
 }
