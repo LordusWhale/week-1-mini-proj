@@ -30,6 +30,8 @@ async function submitForm() {
 }
 async function showBanner(message, time, error = false){
     const banner = document.getElementById('banner');
+    const button = document.getElementById('submit-button');
+    button.setAttribute('disabled', true);
     const bannerMessage = document.getElementById('banner-message');
     if (error) {
         banner.style.backgroundColor = "red"
@@ -37,6 +39,13 @@ async function showBanner(message, time, error = false){
     bannerMessage.innerText = message;
     banner.style.top = '100px';
     await new Promise(r=>setTimeout(r, time));
+    button.removeAttribute('disabled', false)
     banner.style.top = '0'
     banner.style.backgroundColor = "#F28C28"
 }
+let circle = document.getElementById('circle');
+const onMouseMove = (e) =>{
+    circle.style.left = e.pageX + 'px';
+    circle.style.top = e.pageY + 'px';
+  }
+  document.addEventListener('mousemove', onMouseMove)

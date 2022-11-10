@@ -16,7 +16,17 @@ html {
     font-family: 'Oswald', sans-serif;
     scroll-behavior: smooth;
 }
-
+.circle-follow{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    height:35px;
+    width:35px;
+    border-radius:50%;
+    border: 1px solid var(--secondary);
+    background-color: transparent;
+    z-index: 20;
+    pointer-events: none;
+  }
 #heading {
     color: var(--secondary);
 }
